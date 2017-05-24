@@ -1,0 +1,16 @@
+{
+    "data": {
+        "customerInfoIndex": {
+            "index": ["machine", "customer", "location"],
+            "slected": [" ", " ", " "]
+        },
+        "machineInfoIndex": {
+            "index": ["machineType", "dressType", "toolSet", "autoRotation"],
+            "machineType": ["sw", "sn", "worm"],
+            "dressType": ["sw-vw", "sw-xz", "sw-v", "sn-xz", "sn-v-front", "sn--v-back"],
+            "toolSet": ["auto", "manual"],
+            "autoRotation": ["true", "false"],
+            "slected": [" ", " ", " ", " ", " "]
+        }
+    }
+}
