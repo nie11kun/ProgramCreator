@@ -112,6 +112,10 @@ class MachineInfoTableViewController: UITableViewController {
                     detailMachineInfoTableViewController.info = info
             }
             
+        } else if segue.identifier == "Submit" {
+            if let submitViewController = segue.destination as? SubmitViewController {
+                    submitViewController.emailAddressIs = info.emailAddressIs()
+            }
         }
     }
     

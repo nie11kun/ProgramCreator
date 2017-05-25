@@ -16,6 +16,7 @@ class Info {
     private let machineInfoIndexDressType: [String]?
     private let machineInfoIndexToolSet: [String]?
     private let machineInfoIndexAutoRotation: [String]?
+    private let emailAddress: String?
     
     private var customerInfoInputed: [String]?
     private var machineInfoSlected: [String]?
@@ -39,6 +40,7 @@ class Info {
             let machineInfoIndexAutoRotation = feed.value(forKeyPath: "data.machineInfoIndex.autoRotation") as? [String]
             let customerInfoInputed = feed.value(forKeyPath: "data.customerInfoIndex.slected") as? [String]
             let machineInfoSlected = feed.value(forKeyPath: "data.machineInfoIndex.slected") as? [String]
+            let emailAddress = feed.value(forKeyPath: "data.email") as? String
             self.customerInfoIndex = customerInfoIndex
             self.machineInfoIndex = machineInfoIndex
             self.machineInfoIndexMachineType = machineInfoIndexMachineType
@@ -47,6 +49,7 @@ class Info {
             self.machineInfoIndexAutoRotation = machineInfoIndexAutoRotation
             self.customerInfoInputed = customerInfoInputed
             self.machineInfoSlected = machineInfoSlected
+            self.emailAddress = emailAddress
         } else {
             self.customerInfoIndex = nil
             self.machineInfoIndex = nil
@@ -56,6 +59,7 @@ class Info {
             self.machineInfoIndexAutoRotation = nil
             self.customerInfoInputed = nil
             self.machineInfoSlected = nil
+            self.emailAddress = nil
         }
     }
     
@@ -73,6 +77,10 @@ class Info {
         } else {
             return nil
         }
+    }
+    
+    func emailAddressIs() -> String? {
+        return self.emailAddress
     }
     
     func machineInfoDidSlected(index: Int) -> [String]? {

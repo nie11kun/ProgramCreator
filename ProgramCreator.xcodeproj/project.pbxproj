@@ -19,6 +19,7 @@
 		A9752B1B1ED42966003D2AB2 /* DetailMachineInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9752B1A1ED42966003D2AB2 /* DetailMachineInfoTableViewController.swift */; };
 		A9752B1D1ED43A0E003D2AB2 /* mainData.json in Resources */ = {isa = PBXBuildFile; fileRef = A9752B1C1ED43A0E003D2AB2 /* mainData.json */; };
 		A9752B211ED47988003D2AB2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9752B201ED47988003D2AB2 /* MainTabBarController.swift */; };
+		A9FA50441ED6687A00FE5220 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA50431ED6687A00FE5220 /* SubmitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		A9752B1A1ED42966003D2AB2 /* DetailMachineInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMachineInfoTableViewController.swift; sourceTree = "<group>"; };
 		A9752B1C1ED43A0E003D2AB2 /* mainData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainData.json; sourceTree = "<group>"; };
 		A9752B201ED47988003D2AB2 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = ../MainTabBarController.swift; sourceTree = "<group>"; };
+		A9FA50431ED6687A00FE5220 /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				A9752B201ED47988003D2AB2 /* MainTabBarController.swift */,
 				A9752B161ED3CC51003D2AB2 /* Info.swift */,
 				A9752AF81ED3C1F3003D2AB2 /* Main.storyboard */,
+				A9FA50431ED6687A00FE5220 /* SubmitViewController.swift */,
 				A9752B1C1ED43A0E003D2AB2 /* mainData.json */,
 				A9752B181ED42951003D2AB2 /* MachineInfoTableViewController.swift */,
 				A921383C1ED566E00085D64F /* DetailCustomerInfoViewController.swift */,
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FA50441ED6687A00FE5220 /* SubmitViewController.swift in Sources */,
 				A9752B171ED3CC51003D2AB2 /* Info.swift in Sources */,
 				A9752B1B1ED42966003D2AB2 /* DetailMachineInfoTableViewController.swift in Sources */,
 				A9752AF51ED3C1F3003D2AB2 /* AppDelegate.swift in Sources */,

@@ -11,6 +11,7 @@
             "toolSet": ["auto", "manual"],
             "autoRotation": ["true", "false"],
             "slected": [" ", " ", " ", " ", " "]
-        }
+        },
+        "email": ""
     }
 }
