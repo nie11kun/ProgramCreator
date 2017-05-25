@@ -16,7 +16,7 @@ class Info {
     private let machineInfoIndexDressType: [String]?
     private let machineInfoIndexToolSet: [String]?
     private let machineInfoIndexAutoRotation: [String]?
-    private let emailAddress: String?
+    private var emailAddress: String?
     
     private var customerInfoInputed: [String]?
     private var machineInfoSlected: [String]?
@@ -81,6 +81,10 @@ class Info {
     
     func emailAddressIs() -> String? {
         return self.emailAddress
+    }
+    
+    func modifyEmailAddress(email: String) {
+        self.emailAddress = email
     }
     
     func machineInfoDidSlected(index: Int) -> [String]? {

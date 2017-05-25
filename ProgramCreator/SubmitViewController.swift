@@ -10,15 +10,17 @@ import UIKit
 
 class SubmitViewController: UIViewController,UITextFieldDelegate {
     
-    var emailAddressIs: String?
+    var info = Info()
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
-        emailAddressIs = emailAddress.text
-        dismiss(animated: true, completion: nil)
+        if emailAddress.text != "" {
+            info.modifyEmailAddress(email: emailAddress.text!)
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBOutlet weak var emailAddress: UITextField!
@@ -36,9 +38,10 @@ class SubmitViewController: UIViewController,UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        emailAddressIs = emailAddress.text
+        if emailAddress.text != "" {
+            info.modifyEmailAddress(email: emailAddress.text!)
+        }
         return true
     }
-
     
 }

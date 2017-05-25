@@ -13,6 +13,7 @@ class DetailMachineInfoTableViewController: UITableViewController {
     let reusedInditifer = "DetailMachineInfo"
     
     var info = Info()
+    var indexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,13 +55,12 @@ class DetailMachineInfoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        if self.indexPath != nil {
+            tableView.cellForRow(at: self.indexPath!)?.accessoryType = .none
         }
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         info.ModifyDetailMachineInfoDidSlected(Index: (info.machineInfoIndexSlected?.row)!, contents: (info.machineInfoDidSlected(index: (info.machineInfoIndexSlected?.row)!)?[indexPath.row])!)
-        
+        self.indexPath = indexPath
     }
 
     /*

@@ -2,7 +2,7 @@
     "data": {
         "customerInfoIndex": {
             "index": ["machine", "customer", "location"],
-            "slected": [" ", " ", " "]
+            "slected": ["SK7605", "慈兴", "慈新"]
         },
         "machineInfoIndex": {
             "index": ["machineType", "dressType", "toolSet", "autoRotation"],
@@ -10,7 +10,7 @@
             "dressType": ["sw-vw", "sw-xz", "sw-v", "sn-xz", "sn-v-front", "sn--v-back"],
             "toolSet": ["auto", "manual"],
             "autoRotation": ["true", "false"],
-            "slected": [" ", " ", " ", " ", " "]
+            "slected": ["sn", "sn-v", "manual", "false"]
         },
         "email": ""
     }
