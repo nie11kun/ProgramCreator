@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Info {
+class MainData {
+    
+    private let mainDataKey = "mainData"
     
     private let customerInfoIndex: [String]?
     private let machineInfoIndex: [String]?
@@ -16,8 +18,8 @@ class Info {
     private let machineInfoIndexDressType: [String]?
     private let machineInfoIndexToolSet: [String]?
     private let machineInfoIndexAutoRotation: [String]?
-    private var emailAddress: String?
     
+    private var emailAddress: String?
     private var customerInfoInputed: [String]?
     private var machineInfoSlected: [String]?
     
@@ -29,7 +31,8 @@ class Info {
     var customerInfoIndexSlected: IndexPath?
     
     init() {
-        if let url = Bundle.main.url(forResource: "mainData", withExtension: "json"),
+        /*
+        if let url = Bundle.main.url(forResource: "MainData", withExtension: "json"),
             let data = NSData(contentsOf: url),
             let feed = ( try? JSONSerialization.jsonObject(with: data as Data, options: .mutableContainers)) as? NSDictionary {
             let customerInfoIndex = feed.value(forKeyPath: "data.customerInfoIndex.index") as? [String]
@@ -41,6 +44,48 @@ class Info {
             let customerInfoInputed = feed.value(forKeyPath: "data.customerInfoIndex.slected") as? [String]
             let machineInfoSlected = feed.value(forKeyPath: "data.machineInfoIndex.slected") as? [String]
             let emailAddress = feed.value(forKeyPath: "data.email") as? String
+            self.customerInfoIndex = customerInfoIndex
+            self.machineInfoIndex = machineInfoIndex
+            self.machineInfoIndexMachineType = machineInfoIndexMachineType
+            self.machineInfoIndexDressType = machineInfoIndexDressType
+            self.machineInfoIndexToolSet = machineInfoIndexToolSet
+            self.machineInfoIndexAutoRotation = machineInfoIndexAutoRotation
+            self.customerInfoInputed = customerInfoInputed
+            self.machineInfoSlected = machineInfoSlected
+            self.emailAddress = emailAddress
+        } else {
+            self.customerInfoIndex = nil
+            self.machineInfoIndex = nil
+            self.machineInfoIndexMachineType = nil
+            self.machineInfoIndexDressType = nil
+            self.machineInfoIndexToolSet = nil
+            self.machineInfoIndexAutoRotation = nil
+            self.customerInfoInputed = nil
+            self.machineInfoSlected = nil
+            self.emailAddress = nil
+        }
+        */
+        if let url = Bundle.main.url(forResource: "MainData", withExtension: "plist"),
+            let feed = NSDictionary(contentsOf: url) {
+            let customerInfoIndex = feed.value(forKeyPath: "data.customerInfo.index") as? [String]
+            let machineInfoIndex = feed.value(forKeyPath: "data.machineInfo.index") as? [String]
+            let machineInfoIndexMachineType = feed.value(forKeyPath: "data.machineInfo.machineType") as? [String]
+            let machineInfoIndexDressType = feed.value(forKeyPath: "data.machineInfo.dressType") as? [String]
+            let machineInfoIndexToolSet = feed.value(forKeyPath: "data.machineInfo.toolSet") as? [String]
+            let machineInfoIndexAutoRotation = feed.value(forKeyPath: "data.machineInfo.autoRotation") as? [String]
+            let customerInfoInputed: [String]?
+            let machineInfoSlected: [String]?
+            let emailAddress: String?
+            if UserDefaults.standard.object(forKey: mainDataKey) == nil {
+                customerInfoInputed = feed.value(forKeyPath: "data.customerInfo.slected") as? [String]
+                machineInfoSlected = feed.value(forKeyPath: "data.machineInfo.slected") as? [String]
+                emailAddress = feed.value(forKeyPath: "data.email") as? String
+            } else {
+                let mainData = UserDefaults.standard.object(forKey: mainDataKey) as? NSDictionary
+                customerInfoInputed = mainData?.object(forKey: "customerInfoInputed") as? [String]
+                machineInfoSlected = mainData?.object(forKey: "machineInfoSlected") as? [String]
+                emailAddress = mainData?.object(forKey: "email") as? String
+            }
             self.customerInfoIndex = customerInfoIndex
             self.machineInfoIndex = machineInfoIndex
             self.machineInfoIndexMachineType = machineInfoIndexMachineType
@@ -117,6 +162,14 @@ class Info {
     
     func ModifyDetailMachineInfoDidSlected(Index: Int, contents: String) {
         machineInfoSlected?[Index] = contents
+    }
+    
+    func customerInfoInputedIs() -> [String]? {
+        return customerInfoInputed
+    }
+    
+    func machineInfoSlectedIs() -> [String]? {
+        return machineInfoSlected
     }
     
     func customerInfoCount() -> Int? {

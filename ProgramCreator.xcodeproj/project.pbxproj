@@ -14,12 +14,12 @@
 		A9752AFF1ED3C1F3003D2AB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9752AFD1ED3C1F3003D2AB2 /* LaunchScreen.storyboard */; };
 		A9752B0A1ED3C1F3003D2AB2 /* ProgramCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9752B091ED3C1F3003D2AB2 /* ProgramCreatorTests.swift */; };
 		A9752B151ED3C4BE003D2AB2 /* CustomerInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9752B141ED3C4BE003D2AB2 /* CustomerInfoTableViewController.swift */; };
-		A9752B171ED3CC51003D2AB2 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9752B161ED3CC51003D2AB2 /* Info.swift */; };
+		A9752B171ED3CC51003D2AB2 /* MainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9752B161ED3CC51003D2AB2 /* MainData.swift */; };
 		A9752B191ED42951003D2AB2 /* MachineInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9752B181ED42951003D2AB2 /* MachineInfoTableViewController.swift */; };
 		A9752B1B1ED42966003D2AB2 /* DetailMachineInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9752B1A1ED42966003D2AB2 /* DetailMachineInfoTableViewController.swift */; };
-		A9752B1D1ED43A0E003D2AB2 /* mainData.json in Resources */ = {isa = PBXBuildFile; fileRef = A9752B1C1ED43A0E003D2AB2 /* mainData.json */; };
-		A9752B211ED47988003D2AB2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9752B201ED47988003D2AB2 /* MainTabBarController.swift */; };
+		A9752B1D1ED43A0E003D2AB2 /* MainData.json in Resources */ = {isa = PBXBuildFile; fileRef = A9752B1C1ED43A0E003D2AB2 /* MainData.json */; };
 		A9FA50441ED6687A00FE5220 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA50431ED6687A00FE5220 /* SubmitViewController.swift */; };
+		A9FA50461ED6AF6E00FE5220 /* MainData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9FA50451ED6AF6E00FE5220 /* MainData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +44,12 @@
 		A9752B091ED3C1F3003D2AB2 /* ProgramCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCreatorTests.swift; sourceTree = "<group>"; };
 		A9752B0B1ED3C1F3003D2AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9752B141ED3C4BE003D2AB2 /* CustomerInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerInfoTableViewController.swift; path = ../CustomerInfoTableViewController.swift; sourceTree = "<group>"; };
-		A9752B161ED3CC51003D2AB2 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		A9752B161ED3CC51003D2AB2 /* MainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainData.swift; sourceTree = "<group>"; };
 		A9752B181ED42951003D2AB2 /* MachineInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachineInfoTableViewController.swift; sourceTree = "<group>"; };
 		A9752B1A1ED42966003D2AB2 /* DetailMachineInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMachineInfoTableViewController.swift; sourceTree = "<group>"; };
-		A9752B1C1ED43A0E003D2AB2 /* mainData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainData.json; sourceTree = "<group>"; };
-		A9752B201ED47988003D2AB2 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = ../MainTabBarController.swift; sourceTree = "<group>"; };
+		A9752B1C1ED43A0E003D2AB2 /* MainData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainData.json; sourceTree = "<group>"; };
 		A9FA50431ED6687A00FE5220 /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
+		A9FA50451ED6AF6E00FE5220 /* MainData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MainData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,17 +93,17 @@
 			children = (
 				A9752AF41ED3C1F3003D2AB2 /* AppDelegate.swift */,
 				A9752B141ED3C4BE003D2AB2 /* CustomerInfoTableViewController.swift */,
-				A9752B201ED47988003D2AB2 /* MainTabBarController.swift */,
-				A9752B161ED3CC51003D2AB2 /* Info.swift */,
-				A9752AF81ED3C1F3003D2AB2 /* Main.storyboard */,
-				A9FA50431ED6687A00FE5220 /* SubmitViewController.swift */,
-				A9752B1C1ED43A0E003D2AB2 /* mainData.json */,
-				A9752B181ED42951003D2AB2 /* MachineInfoTableViewController.swift */,
 				A921383C1ED566E00085D64F /* DetailCustomerInfoViewController.swift */,
+				A9752B181ED42951003D2AB2 /* MachineInfoTableViewController.swift */,
 				A9752B1A1ED42966003D2AB2 /* DetailMachineInfoTableViewController.swift */,
-				A9752AFB1ED3C1F3003D2AB2 /* Assets.xcassets */,
+				A9FA50431ED6687A00FE5220 /* SubmitViewController.swift */,
+				A9752B161ED3CC51003D2AB2 /* MainData.swift */,
 				A9752AFD1ED3C1F3003D2AB2 /* LaunchScreen.storyboard */,
+				A9752AF81ED3C1F3003D2AB2 /* Main.storyboard */,
+				A9FA50451ED6AF6E00FE5220 /* MainData.plist */,
+				A9752B1C1ED43A0E003D2AB2 /* MainData.json */,
 				A9752B001ED3C1F3003D2AB2 /* Info.plist */,
+				A9752AFB1ED3C1F3003D2AB2 /* Assets.xcassets */,
 			);
 			path = ProgramCreator;
 			sourceTree = "<group>";
@@ -202,7 +202,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9752B1D1ED43A0E003D2AB2 /* mainData.json in Resources */,
+				A9FA50461ED6AF6E00FE5220 /* MainData.plist in Resources */,
+				A9752B1D1ED43A0E003D2AB2 /* MainData.json in Resources */,
 				A9752AFF1ED3C1F3003D2AB2 /* LaunchScreen.storyboard in Resources */,
 				A9752AFC1ED3C1F3003D2AB2 /* Assets.xcassets in Resources */,
 				A9752AFA1ED3C1F3003D2AB2 /* Main.storyboard in Resources */,
@@ -224,11 +225,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9FA50441ED6687A00FE5220 /* SubmitViewController.swift in Sources */,
-				A9752B171ED3CC51003D2AB2 /* Info.swift in Sources */,
+				A9752B171ED3CC51003D2AB2 /* MainData.swift in Sources */,
 				A9752B1B1ED42966003D2AB2 /* DetailMachineInfoTableViewController.swift in Sources */,
 				A9752AF51ED3C1F3003D2AB2 /* AppDelegate.swift in Sources */,
 				A921383D1ED566E00085D64F /* DetailCustomerInfoViewController.swift in Sources */,
-				A9752B211ED47988003D2AB2 /* MainTabBarController.swift in Sources */,
 				A9752B151ED3C4BE003D2AB2 /* CustomerInfoTableViewController.swift in Sources */,
 				A9752B191ED42951003D2AB2 /* MachineInfoTableViewController.swift in Sources */,
 			);

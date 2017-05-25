@@ -12,15 +12,16 @@ class DetailCustomerInfoViewController: UIViewController {
     
     @IBOutlet weak var detailCustomInfoText: UITextView!
     
-    var info = Info()
+    var mainData = MainData()
     
     override func viewDidLoad() {
-        self.navigationItem.title = info.customerInfoTitle
-        detailCustomInfoText.text = info.customerInfoDidInputed(index: (info.customerInfoIndexSlected?.row)!)
+        self.navigationItem.title = mainData.customerInfoTitle
+        detailCustomInfoText.text = mainData.customerInfoDidInputed(index: (mainData.customerInfoIndexSlected?.row)!)
+        detailCustomInfoText.text = mainData.customerInfoDidInputed(index: (mainData.customerInfoIndexSlected?.row)!)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        info.ModifyCustomerInfoDidInputed(Index: (info.customerInfoIndexSlected?.row)!, contents: detailCustomInfoText.text)
+        mainData.ModifyCustomerInfoDidInputed(Index: (mainData.customerInfoIndexSlected?.row)!, contents: detailCustomInfoText.text)
     }
     
 }

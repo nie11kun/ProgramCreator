@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eih-7x-wsb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7T1-7k-oiS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,23 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Machine-->
-        <scene sceneID="EHJ-sj-mxy">
-            <objects>
-                <navigationController id="eln-FA-CEU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Machine" image="MachineIcon" id="jY6-BU-JLk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="asd-nM-2Bv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="23X-hF-SM7" kind="relationship" relationship="rootViewController" id="HRo-Pj-Rfw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FsP-2u-aFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-959" y="478"/>
-        </scene>
         <!--MachineInfo Table View Controller-->
         <scene sceneID="Pgb-ID-Rjb">
             <objects>
@@ -182,25 +165,6 @@
             </objects>
             <point key="canvasLocation" x="620" y="476"/>
         </scene>
-        <!--Main Tab Bar Controller-->
-        <scene sceneID="ZEv-Mb-kAX">
-            <objects>
-                <tabBarController id="Eih-7x-wsb" customClass="MainTabBarController" customModule="ProgramCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="iB6-rk-9r3"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="9Lt-jp-yXs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="7T1-7k-oiS" kind="relationship" relationship="viewControllers" id="h6U-Bs-pRf"/>
-                        <segue destination="eln-FA-CEU" kind="relationship" relationship="viewControllers" id="Spd-g9-hAQ"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g78-Nu-Emb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1794" y="89"/>
-        </scene>
         <!--Customer-->
         <scene sceneID="vQl-xZ-V2R">
             <objects>
@@ -261,7 +225,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Customer" image="CustomerIcon" id="ct1-Be-waA"/>
-                    <navigationItem key="navigationItem" title="Customer" id="jVJ-f1-mwP"/>
+                    <navigationItem key="navigationItem" title="Customer" id="jVJ-f1-mwP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="Evc-qz-W9x">
+                            <connections>
+                                <segue destination="23X-hF-SM7" kind="show" identifier="Navigate to Machine" id="CPL-O2-R9N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7z7-1E-ACS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,7 +250,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to input Text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uDw-bI-h2E">
-                                <rect key="frame" x="10" y="0.0" width="355" height="618"/>
+                                <rect key="frame" x="10" y="0.0" width="355" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>

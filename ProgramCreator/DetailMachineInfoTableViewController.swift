@@ -12,7 +12,7 @@ class DetailMachineInfoTableViewController: UITableViewController {
 
     let reusedInditifer = "DetailMachineInfo"
     
-    var info = Info()
+    var mainData = MainData()
     var indexPath: IndexPath?
     
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class DetailMachineInfoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationItem.title = info.machineInfoTitle
+        self.navigationItem.title = mainData.machineInfoTitle
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +40,7 @@ class DetailMachineInfoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return info.machineInfoDidSlected!.count
+        return mainData.machineInfoDidSlected!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,7 +49,7 @@ class DetailMachineInfoTableViewController: UITableViewController {
         // Configure the cell...
 
         if let lable = cell.textLabel {
-            lable.text = info.machineInfoDidSlected?[indexPath.row]
+            lable.text = mainData.machineInfoDidSlected?[indexPath.row]
         }
         return cell
     }
@@ -59,7 +59,7 @@ class DetailMachineInfoTableViewController: UITableViewController {
             tableView.cellForRow(at: self.indexPath!)?.accessoryType = .none
         }
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        info.ModifyDetailMachineInfoDidSlected(Index: (info.machineInfoIndexSlected?.row)!, contents: (info.machineInfoDidSlected(index: (info.machineInfoIndexSlected?.row)!)?[indexPath.row])!)
+        mainData.ModifyDetailMachineInfoDidSlected(Index: (mainData.machineInfoIndexSlected?.row)!, contents: (mainData.machineInfoDidSlected(index: (mainData.machineInfoIndexSlected?.row)!)?[indexPath.row])!)
         self.indexPath = indexPath
     }
 
