@@ -131,16 +131,19 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-Mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEm-9w-LCB">
-                                <rect key="frame" x="26" y="273" width="53.5" height="21"/>
+                                <rect key="frame" x="26" y="273" width="54" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail address..." borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EQN-Fo-te8">
-                                <rect key="frame" x="89.5" y="268.5" width="259.5" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail address..." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EQN-Fo-te8">
+                                <rect key="frame" x="90" y="269" width="259" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qpg-Zd-fsq" id="hxF-pP-kra"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please type your email address correctly, so we will send your program zip file in a few minites." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="opF-sV-F8w">
                                 <rect key="frame" x="26" y="324" width="323" height="333"/>
@@ -284,20 +287,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to input Text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uDw-bI-h2E">
-                                <rect key="frame" x="10" y="0.0" width="355" height="618"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Tap to input Text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uDw-bI-h2E">
+                                <rect key="frame" x="10" y="0.0" width="355" height="150"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="eXd-6Z-dUd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94853060233160624" green="0.94853060233160624" blue="0.94853060233160624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uDw-bI-h2E" firstAttribute="centerX" secondItem="MZJ-OU-ZrV" secondAttribute="centerX" id="RUn-Xg-lnO"/>
-                            <constraint firstAttribute="trailing" secondItem="uDw-bI-h2E" secondAttribute="trailing" constant="10" id="cWr-Dr-FR0"/>
                             <constraint firstItem="uDw-bI-h2E" firstAttribute="top" secondItem="MZJ-OU-ZrV" secondAttribute="top" id="gvM-0M-W8g"/>
-                            <constraint firstItem="O8j-dL-oKT" firstAttribute="top" secondItem="uDw-bI-h2E" secondAttribute="bottom" id="kGs-Oa-6QY"/>
-                            <constraint firstItem="uDw-bI-h2E" firstAttribute="leading" secondItem="MZJ-OU-ZrV" secondAttribute="leading" constant="10" id="xPY-EE-L4s"/>
+                            <constraint firstAttribute="trailing" secondItem="uDw-bI-h2E" secondAttribute="trailing" constant="10" id="hYV-HB-s6E"/>
+                            <constraint firstItem="uDw-bI-h2E" firstAttribute="leading" secondItem="MZJ-OU-ZrV" secondAttribute="leading" constant="10" id="ta2-nt-Ga1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="n36-4x-sjh"/>
@@ -307,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgs-BY-x87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="-1085"/>
+            <point key="canvasLocation" x="725.60000000000002" y="-1085.3073463268368"/>
         </scene>
     </scenes>
     <resources>
@@ -315,6 +319,6 @@
         <image name="MachineIcon" width="28" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hxu-ve-EHL"/>
+        <segue reference="TOx-u6-2Nk"/>
     </inferredMetricsTieBreakers>
 </document>

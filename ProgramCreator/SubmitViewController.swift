@@ -26,7 +26,6 @@ class SubmitViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var emailAddress: UITextField!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,7 +40,7 @@ class SubmitViewController: UIViewController,UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailAddress.resignFirstResponder()
+        textField.resignFirstResponder()
         extractMainData.userEmailContent(content: emailAddress.text!)
         return true
     }

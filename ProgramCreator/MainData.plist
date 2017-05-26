@@ -6,25 +6,27 @@
 	<dict>
 		<key>customerInfo</key>
 		<array>
-			<string>machine</string>
-			<string>customer</string>
-			<string>location</string>
+			<string>机床名称</string>
+			<string>用户名称</string>
+			<string>用户地址</string>
+			<string>软件版本</string>
+			<string>调试人员</string>
 		</array>
 		<key>machineInfo</key>
 		<array>
 			<dict>
 				<key>name</key>
-				<string>machineType</string>
+				<string>机床类型</string>
 				<key>content</key>
 				<array>
 					<string>sw</string>
 					<string>sn</string>
-					<string>wrom</string>
+					<string>worm</string>
 				</array>
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>dressType</string>
+				<string>休整类型</string>
 				<key>content</key>
 				<array>
 					<string>sw-vw</string>
@@ -33,24 +35,54 @@
 					<string>sn-xz</string>
 					<string>sn-x-front</string>
 					<string>sn-x-back</string>
+					<string>worm</string>
 				</array>
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>toolSet</string>
+				<string>对刀</string>
 				<key>content</key>
 				<array>
+					<string>manual</string>
 					<string>auto</string>
-					<string>false</string>
 				</array>
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>autoRotation</string>
+				<string>自动螺旋升角</string>
 				<key>content</key>
 				<array>
 					<string>true</string>
 					<string>false</string>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>自动门</string>
+				<key>content</key>
+				<array>
+					<string>true</string>
+					<string>false</string>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>砂轮类型</string>
+				<key>content</key>
+				<array>
+					<string>frequncy</string>
+					<string>serve</string>
+					<string>nomal</string>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>休整轮类型</string>
+				<key>content</key>
+				<array>
+					<string>frequncy</string>
+					<string>serve</string>
+					<string>nomal</string>
 				</array>
 			</dict>
 		</array>
