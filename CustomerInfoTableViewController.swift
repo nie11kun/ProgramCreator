@@ -102,6 +102,8 @@ class CustomerInfoTableViewController: UITableViewController {
                 let index = self.tableView.indexPath(for: cell) {
                     detailCustomerInfoViewController.customerInfoNameIndex = index.row
             }
+        } else if segue.identifier == "Submit" {
+            
         }
     }
  

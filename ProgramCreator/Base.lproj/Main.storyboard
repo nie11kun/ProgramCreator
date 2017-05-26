@@ -169,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPv-IZ-1Iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127.2" y="1242.7286356821589"/>
+            <point key="canvasLocation" x="1329" y="475"/>
         </scene>
         <!--DetailMachineInfo Table View Controller-->
         <scene sceneID="XJB-Kp-99r">
@@ -198,7 +198,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Pt-AF-eC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="476"/>
+            <point key="canvasLocation" x="604" y="1255"/>
         </scene>
         <!--Customer-->
         <scene sceneID="vQl-xZ-V2R">
@@ -260,7 +260,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Customer" image="CustomerIcon" id="ct1-Be-waA"/>
-                    <navigationItem key="navigationItem" title="Customer" id="jVJ-f1-mwP"/>
+                    <navigationItem key="navigationItem" title="Customer" id="jVJ-f1-mwP">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="fxf-rr-gOY">
+                            <connections>
+                                <segue destination="qpg-Zd-fsq" kind="presentation" identifier="Submit" id="TOx-u6-2Nk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7z7-1E-ACS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,11 +307,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgs-BY-x87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615.20000000000005" y="-274.81259370314842"/>
+            <point key="canvasLocation" x="727" y="-1085"/>
         </scene>
     </scenes>
     <resources>
         <image name="CustomerIcon" width="19" height="26"/>
         <image name="MachineIcon" width="28" height="27"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hxu-ve-EHL"/>
+    </inferredMetricsTieBreakers>
 </document>
