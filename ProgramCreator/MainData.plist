@@ -5,64 +5,55 @@
 	<key>data</key>
 	<dict>
 		<key>customerInfo</key>
-		<dict>
-			<key>index</key>
-			<array>
-				<string>machine</string>
-				<string>customer</string>
-				<string>location</string>
-			</array>
-			<key>slected</key>
-			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-			</array>
-		</dict>
+		<array>
+			<string>machine</string>
+			<string>customer</string>
+			<string>location</string>
+		</array>
 		<key>machineInfo</key>
-		<dict>
-			<key>index</key>
-			<array>
+		<array>
+			<dict>
+				<key>name</key>
 				<string>machineType</string>
+				<key>content</key>
+				<array>
+					<string>sw</string>
+					<string>sn</string>
+					<string>wrom</string>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
 				<string>dressType</string>
+				<key>content</key>
+				<array>
+					<string>sw-vw</string>
+					<string>sw-xz</string>
+					<string>sw-v</string>
+					<string>sn-xz</string>
+					<string>sn-x-front</string>
+					<string>sn-x-back</string>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
 				<string>toolSet</string>
+				<key>content</key>
+				<array>
+					<string>auto</string>
+					<string>false</string>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
 				<string>autoRotation</string>
-			</array>
-			<key>machineType</key>
-			<array>
-				<string>sw</string>
-				<string>sn</string>
-				<string>worm</string>
-			</array>
-			<key>dressType</key>
-			<array>
-				<string>sw-vw</string>
-				<string>sw-xz</string>
-				<string>sw-v</string>
-				<string>sn-xz</string>
-				<string>sn-x-front</string>
-				<string>sn-x-back</string>
-			</array>
-			<key>toolSet</key>
-			<array>
-				<string>auto</string>
-				<string>manual</string>
-			</array>
-			<key>autoRotation</key>
-			<array>
-				<string>true</string>
-				<string>false</string>
-			</array>
-			<key>slected</key>
-			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
-			</array>
-		</dict>
-		<key>email</key>
-		<string></string>
+				<key>content</key>
+				<array>
+					<string>true</string>
+					<string>false</string>
+				</array>
+			</dict>
+		</array>
 	</dict>
 </dict>
 </plist>

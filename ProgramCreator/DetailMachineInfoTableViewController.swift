@@ -11,9 +11,8 @@ import UIKit
 class DetailMachineInfoTableViewController: UITableViewController {
 
     let reusedInditifer = "DetailMachineInfo"
-    
-    var mainData = MainData()
-    var indexPath: IndexPath?
+    var machineInfoNameIndex: Int?
+    let extractMainData = ExtractMainData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,14 @@ class DetailMachineInfoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationItem.title = mainData.machineInfoTitle
+        self.navigationItem.title = extractMainData.machineInfoName(index: machineInfoNameIndex!)
+        
+        if extractMainData.IfHaveSlectedMachineInfoContentsIndexPath(index: machineInfoNameIndex!) {
+            let indexPath = extractMainData.userSlectedMachineInfoContentsIndexPath(index: machineInfoNameIndex!)
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        }
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +46,7 @@ class DetailMachineInfoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return mainData.machineInfoDidSlected!.count
+        return extractMainData.machineInfoContents(index: machineInfoNameIndex!).count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,20 +55,22 @@ class DetailMachineInfoTableViewController: UITableViewController {
         // Configure the cell...
 
         if let lable = cell.textLabel {
-            lable.text = mainData.machineInfoDidSlected?[indexPath.row]
+            lable.text = extractMainData.machineInfoContents(index: machineInfoNameIndex!)[indexPath.row]
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.indexPath != nil {
-            tableView.cellForRow(at: self.indexPath!)?.accessoryType = .none
-        }
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        mainData.ModifyDetailMachineInfoDidSlected(Index: (mainData.machineInfoIndexSlected?.row)!, contents: (mainData.machineInfoDidSlected(index: (mainData.machineInfoIndexSlected?.row)!)?[indexPath.row])!)
-        self.indexPath = indexPath
+        let content = extractMainData.machineInfoContents(index: machineInfoNameIndex!)
+        extractMainData.userSlectedMachineInfoContents(index: machineInfoNameIndex!, value: content[indexPath.row])
+        extractMainData.userSlectedMachineInfoContentsIndexPath(index: machineInfoNameIndex!, value: indexPath)
     }
 
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7T1-7k-oiS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eOp-Cw-CAQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZWu-pY-d7o">
+            <objects>
+                <tabBarController id="eOp-Cw-CAQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="kwb-sE-Piv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7T1-7k-oiS" kind="relationship" relationship="viewControllers" id="PMx-WK-jxE"/>
+                        <segue destination="HCj-d5-VPI" kind="relationship" relationship="viewControllers" id="K3K-q3-2fd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lz3-qc-zqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1918" y="112"/>
+        </scene>
+        <!--Machine-->
+        <scene sceneID="mfE-7Y-noX">
+            <objects>
+                <navigationController id="HCj-d5-VPI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Machine" image="MachineIcon" id="kFN-gk-iYb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PGD-BA-j6K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="23X-hF-SM7" kind="relationship" relationship="rootViewController" id="mK0-0k-FmT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jr4-7i-JRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-959" y="475"/>
+        </scene>
         <!--MachineInfo Table View Controller-->
         <scene sceneID="Pgb-ID-Rjb">
             <objects>
@@ -225,13 +260,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Customer" image="CustomerIcon" id="ct1-Be-waA"/>
-                    <navigationItem key="navigationItem" title="Customer" id="jVJ-f1-mwP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="Evc-qz-W9x">
-                            <connections>
-                                <segue destination="23X-hF-SM7" kind="show" identifier="Navigate to Machine" id="CPL-O2-R9N"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Customer" id="jVJ-f1-mwP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7z7-1E-ACS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,7 +279,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to input Text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uDw-bI-h2E">
-                                <rect key="frame" x="10" y="0.0" width="355" height="667"/>
+                                <rect key="frame" x="10" y="0.0" width="355" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>

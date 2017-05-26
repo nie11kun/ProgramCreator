@@ -10,9 +10,7 @@ import UIKit
 
 class SubmitViewController: UIViewController,UITextFieldDelegate {
     
-    var mainData = MainData()
-    let mainDataKey = "mainData"
-    var extractedMainData: NSDictionary?
+    let extractMainData = ExtractMainData()
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
@@ -20,8 +18,8 @@ class SubmitViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func done(_ sender: UIBarButtonItem) {
         if emailAddress.text != "" {
-            mainData.modifyEmailAddress(email: emailAddress.text!)
-            saveMainData()
+            extractMainData.userEmailContent(content: emailAddress.text!)
+            extractMainData.saveAllData()
             dismiss(animated: true, completion: nil)
         }
     }
@@ -32,7 +30,9 @@ class SubmitViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        emailAddress.text = mainData.emailAddressIs()
+        if extractMainData.markUserEmailContent() {
+            emailAddress.text = extractMainData.EmailContent()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,21 +41,9 @@ class SubmitViewController: UIViewController,UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        if emailAddress.text != "" {
-            mainData.modifyEmailAddress(email: emailAddress.text!)
-        }
+        emailAddress.resignFirstResponder()
+        extractMainData.userEmailContent(content: emailAddress.text!)
         return true
-    }
-    
-    func saveMainData() {
-        if let customerInfoInputed = mainData.customerInfoInputedIs(),
-            let machineInfoSlected = mainData.machineInfoSlectedIs(),
-            let email = emailAddress.text {
-                extractedMainData = ["customerInfoInputed": customerInfoInputed, "machineInfoSlected": machineInfoSlected, "email": email]
-                UserDefaults.standard.set(extractedMainData, forKey: mainDataKey)
-                UserDefaults.standard.synchronize()
-        }
     }
     
 }

@@ -11,8 +11,7 @@ import UIKit
 class CustomerInfoTableViewController: UITableViewController {
 
     let reusedInditifer = "CustomerInfo"
-    
-    let mainData = MainData()
+    let extractMainData = ExtractMainData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,17 +38,17 @@ class CustomerInfoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return mainData.customerInfoCount()!
+        return extractMainData.customerInfo().count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reusedInditifer, for: indexPath)
         if let lable = cell.textLabel {
-            lable.text = mainData.customerInfoIndex(index: indexPath.row)
+            lable.text = extractMainData.customerInfoNames()[indexPath.row]
         }
         if let detailTextLabel = cell.detailTextLabel {
-            detailTextLabel.text = mainData.customerInfoDidInputed(index: indexPath.row)
+            detailTextLabel.text = extractMainData.customerInfoContents()[indexPath.row]
         }
         // Configure the cell...
 
@@ -101,13 +100,7 @@ class CustomerInfoTableViewController: UITableViewController {
             if let detailCustomerInfoViewController = segue.destination as? DetailCustomerInfoViewController,
                 let cell = sender as? UITableViewCell,
                 let index = self.tableView.indexPath(for: cell) {
-                    mainData.customerInfoTitle = mainData.customerInfoIndex(index: index.row)
-                    mainData.customerInfoIndexSlected = index
-                    detailCustomerInfoViewController.mainData = mainData
-            }
-        } else if segue.identifier == "Navigate to Machine" {
-            if let machineInfoTableViewController = segue.destination as? MachineInfoTableViewController {
-                machineInfoTableViewController.mainData = mainData
+                    detailCustomerInfoViewController.customerInfoNameIndex = index.row
             }
         }
     }

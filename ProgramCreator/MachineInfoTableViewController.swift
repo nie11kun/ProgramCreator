@@ -12,7 +12,7 @@ class MachineInfoTableViewController: UITableViewController {
 
     
     let reusedInditifer = "MachineInfo"
-    var mainData = MainData()
+    let extractMainData = ExtractMainData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,17 +40,17 @@ class MachineInfoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return mainData.machineInfoCount()!
+        return extractMainData.machineInfo().count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reusedInditifer, for: indexPath)
         if let lable = cell.textLabel {
-            lable.text = mainData.machineInfoIndex(index: indexPath.row)
+            lable.text = extractMainData.machineInfoNames()[indexPath.row]
         }
         if let detailTextLabel = cell.detailTextLabel {
-            detailTextLabel.text = mainData.detailMachineInfoDidSlected(index: indexPath.row)
+            detailTextLabel.text = extractMainData.slectedMachineInfoContents()[indexPath.row]
         }
         // Configure the cell...
         return cell
@@ -107,16 +107,11 @@ class MachineInfoTableViewController: UITableViewController {
             if let detailMachineInfoTableViewController = segue.destination as? DetailMachineInfoTableViewController,
                 let cell = sender as? UITableViewCell,
                 let index = self.tableView.indexPath(for: cell) {
-                    mainData.machineInfoIndexSlected = index
-                    mainData.machineInfoDidSlected = mainData.machineInfoDidSlected(index: index.row)
-                    mainData.machineInfoTitle = mainData.machineInfoIndex(index: index.row)
-                    detailMachineInfoTableViewController.mainData = mainData
+                    detailMachineInfoTableViewController.machineInfoNameIndex = index.row
             }
             
         } else if segue.identifier == "Submit" {
-            if let submitViewController = segue.destination as? SubmitViewController {
-                    submitViewController.mainData = mainData
-            }
+            
         }
     }
     
